@@ -1,5 +1,6 @@
-gs_point=$1
-python2 regionize_gs_coef.py /home/yzhao104/Desktop/BG_project/AD_data/YZ_dataset/002_S_0295 $gs_point
+dataset=$1
+gs_point=$2
+python2 regionize_gs_coef.py $dataset $gs_point
 python2 coef_analysis.py $gs_point > coef_analysis.txt
 lb=$(grep lb coef_analysis.txt | cut -d: -f2)
 ub=$(grep ub coef_analysis.txt | cut -d: -f2)
@@ -12,11 +13,11 @@ do
     coef_raw=$region'_gs_coef.raw'
     coef_mesh='colored_'$region'_gs_coef.m'
     coef_obj=' colored_'$region'_gs_coef.obj'
-    
+
     #./ccbbm -color_attribute $atlas $coef_raw $coef_mesh
     ./ccbbm -color_attribute $atlas $coef_raw $coef_mesh $lb $ub
     #./ccbbm -color_attribute $atlas $coef_raw $coef_mesh -0.00197201222181 0.0018953132676
-    ./ccbbm -mesh2obj $coef_mesh $coef_obj 
+    ./ccbbm -mesh2obj $coef_mesh $coef_obj
     rm $coef_mesh
 done
 f_n='sym_'$gs_point
