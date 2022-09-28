@@ -4,7 +4,7 @@ conda config --add channels conda-forge
 conda config --add channels intel
 conda create -n AD_PD_learning
 conda activate AD_PD_learning
-conda install 'python=2.7.14'
+conda install 'python=2.7.6'
 conda install 'numpy=1.16.3'
 conda install 'scipy=1.2.1'
 conda install 'scikit-learn=0.20.3'
