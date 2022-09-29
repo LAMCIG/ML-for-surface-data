@@ -13,3 +13,16 @@ conda install pandas
 git clone https://github.com/neurospin/pylearn-parsimony.git
 cd pylearn-parsimony
 sudo python3 setup.py install ## If this does not work out, copy the folder "parsimony" to the corresponding python packages folder. For miniconda, it's called "site-packages".
+
+## For OrdTVL1 code run ##
+
+1. replace the python2.7.6 parsimony/utils with the python3 parsimony/utils
+
+2. 
+
+"conda install autopep8" 
+
+then run 
+
+"autopep8 -i /ifshome/yzhao/final_dataset_newest_balanced_fscore_allregion_OrdTVL1_gs_cv/parsimony/functions/losses.py"
+
